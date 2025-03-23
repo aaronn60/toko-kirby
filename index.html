@@ -60,22 +60,38 @@
     <script>
         // Daftar produk affiliate
         const products = [
-            { number: "1", name: "Nutrijell Stroberi/Strawberry Jelly Powder [15 g]", price: "Rp5.087", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/nutrijellstrabrry" },
-            { number: "2", name: "SUPER SOL Karbol Wangi Pine 23ml per renceng", price: "Rp5.087", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/supersolrenceng" },
-            { number: "3", name: "DETTOL COOL 60 GR", price: "Rp4.738", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/dettolcool" },
-            { number: "4", name: "LIFEBUOY Total 10 Sabun Batang [75 g]", price: "Rp3.990", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/lIfebuoy10" },
-            { number: "5", name: "Masako Bumbu Kaldu Penyedap Rasa Ayam 9 g [12 Sachet/ 1 Renceng]", price: "Rp5.280", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/masakorenceng" }
+            { number: "1", name: "Nutrijell Stroberi/Strawberry Jelly Powder [15 g]", price: "Rp5.087", link: "https://blibli.onelink.me/aFLN/nutrijellstrabrry" },
+            { number: "2", name: "SUPER SOL Karbol Wangi Pine 23ml per renceng", price: "Rp5.087", link: "https://blibli.onelink.me/aFLN/supersolrenceng" },
+            { number: "3", name: "DETTOL COOL 60 GR", price: "Rp4.738", link: "https://blibli.onelink.me/aFLN/dettolcool" },
+            { number: "4", name: "LIFEBUOY Total 10 Sabun Batang [75 g]", price: "Rp3.990", link: "https://blibli.onelink.me/aFLN/lIfebuoy10" },
+            { number: "5", name: "Masako Bumbu Kaldu Penyedap Rasa Ayam 9 g [12 Sachet/ 1 Renceng]", price: "Rp5.280", link: "https://blibli.onelink.me/aFLN/masakorenceng" }
         ];
 
+        // Fungsi untuk mendapatkan gambar dari metadata OpenGraph
+        async function fetchOGImage(url) {
+            try {
+                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+                const data = await response.json();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data.contents, "text/html");
+                const ogImage = doc.querySelector('meta[property="og:image"]');
+                return ogImage ? ogImage.content : "https://via.placeholder.com/150";
+            } catch (error) {
+                return "https://via.placeholder.com/150";
+            }
+        }
+
         // Menampilkan daftar produk di halaman
-        const productList = document.getElementById("product-list");
-        function renderProducts() {
+        async function renderProducts() {
+            const productList = document.getElementById("product-list");
             productList.innerHTML = "";
-            products.forEach(product => {
+            
+            for (const product of products) {
+                const imageUrl = await fetchOGImage(product.link);
                 const div = document.createElement("div");
                 div.className = "product";
                 div.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="${imageUrl}" alt="${product.name}">
                     <div class="product-info">
                         <h3>${product.number}. ${product.name}</h3>
                         <p>Harga: ${product.price}</p>
@@ -83,22 +99,11 @@
                     </div>
                 `;
                 productList.appendChild(div);
-            });
+            }
         }
 
         // Panggil fungsi untuk menampilkan produk saat halaman dimuat
         renderProducts();
-
-        // Log di console untuk membantu pengguna
-        console.log("✅ Produk telah dimuat. Untuk menambahkan produk baru, gunakan perintah berikut di console:");
-        console.log(`products.push({
-            number: "6",
-            name: "Nama Produk Baru",
-            price: "Rp10.000",
-            image: "https://via.placeholder.com/150",
-            link: "https://blibli.onelink.me/aFLN/produkbaru"
-        }); renderProducts();`);
-        console.log("📌 Setelah mengetik perintah di atas di console, tekan Enter dan produk baru akan muncul di halaman.");
     </script>
 </body>
 </html>
