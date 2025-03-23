@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="id"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Toko Kirby&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.product {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.product img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.product-info {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-grow: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.product a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #007bff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: background 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.product a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0056b3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Toko Kirby&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Silakan pilih produk dan klik link untuk membeli melalui affiliate Blibli.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="product-list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Daftar produk affiliate</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const products = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ number: "1", name: "Nutrijell Stroberi/Strawberry Jelly Powder [15 g]", price: "Rp5.087", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/nutrijellstrabrry" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ number: "2", name: "SUPER SOL Karbol Wangi Pine 23ml per renceng", price: "Rp5.087", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/supersolrenceng" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ number: "3", name: "DETTOL COOL 60 GR", price: "Rp4.738", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/dettolcool" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ number: "4", name: "LIFEBUOY Total 10 Sabun Batang [75 g]", price: "Rp3.990", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/lIfebuoy10" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{ number: "5", name: "Masako Bumbu Kaldu Penyedap Rasa Ayam 9 g [12 Sachet/ 1 Renceng]", price: "Rp5.280", image: "https://via.placeholder.com/150", link: "https://blibli.onelink.me/aFLN/masakorenceng" }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Menampilkan daftar produk di halaman</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const productList = document.getElementById("product-list");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>products.forEach(product =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.className = "product";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="${product.image}" alt="${product.name}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="product-info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;${product.number}. ${product.name}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Harga: ${product.price}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="${product.link}" target="_blank"&gt;Beli Sekarang&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>productList.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Cara menambahkan produk baru</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Cukup tambahkan objek baru ke dalam array "products"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Contoh:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// products.push({<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">    </span>number: "6",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">    </span>name: "Nama Produk Baru",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">    </span>price: "Rp10.000",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">    </span>image: "https://via.placeholder.com/150",<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">    </span>link: "https://blibli.onelink.me/aFLN/produkbaru"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Kemudian refresh halaman agar produk muncul</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
